@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>localStorageのサンプル</title>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div id="body_wrap">
+  <header id="finishTodo">
+    <span id="meanOfNum">遂行</span>
+    <button id="resetButton" type="button">初期化</button>
+  </header>
+  <div id="form">
+    <input id="formText" type="text" maxlength="20">
+    <button id="formButton" type="button" >追加</button>
+    <input id="deleteAllButton" type="button" value="全削除">
+  </div>
+  <div id="list"></div>
+  </div>
+  <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+  <script src="js/todo.js"></script>
+</body>
+</html>

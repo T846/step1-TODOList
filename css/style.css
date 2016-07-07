@@ -1,0 +1,80 @@
+#body_wrap {
+  width: 400px;
+  margin: 20px auto;
+}
+
+#checkNum {
+  font-size: 70pt;
+}
+
+#meanOfNum {
+  font-size: 30pt;
+}
+
+#resetButton {
+  font-size: 15pt;
+  border: none;
+  background: #FFF;
+}
+
+#form {
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+#formText {
+  width: 344px;
+  height: 28px;
+  font-size: 17px;
+  border: 1px solid #595757;
+}
+
+#formButton {
+  border: none;
+  width: 46px;
+  height: 28px;
+}
+
+.todo {
+  width: 384px;
+  height: 130px;
+  margin-bottom: 10px;
+  padding: 7px;
+  border: 1px solid #595757;
+}
+
+.todoHeader {
+  width: 384px;
+}
+
+.todoDate {
+  margin: 0px 0px auto auto;
+}
+
+.todoText {
+  padding-top: 33px;
+  height: 17px;
+  font-size: 17px;
+  text-align: right;
+}
+
+.todoFooter {
+  width: 95px;
+  margin: 16px 0px 0px auto;
+}
+
+.edit {
+  width: 46px;
+  height: 28px;
+}
+
+.delete {
+  width: 46px;
+  height: 28px;
+}
+
+.inputTODO {
+  width: 350px;
+  height: 28px;
+  font-size: 17px;
+}
