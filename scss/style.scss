@@ -1,4 +1,9 @@
-$gray: #595757 !default;
+$gray: #ccc !default;
+$gray-hover: #595757 !default;
+
+html {
+  background: #F0F0E8;
+}
 
 #body_wrap {
   width: 400px;
@@ -18,9 +23,14 @@ $gray: #595757 !default;
 }
 
 #resetButton {
-  font-size: 15pt;
+  font-size: 12pt;
   border: none;
-  background: #FFF;
+  background: #FFFF;
+  color: $gray;
+  
+  &:hover {
+    color: #000; 
+  }
 }
 
 #form {
@@ -28,16 +38,42 @@ $gray: #595757 !default;
   margin-bottom: 20px;
 }
 
+#formTextWrap{
+  float: left;
+}
+
 #formText {
   width: 344px;
   height: 28px;
   font-size: 17px;
-  border: 1px solid $gray;
+  border:solid 1px #ddd;
+  -moz-box-shadow: inset 1px 1px 1px -1px rgba(0,0,0,0.7);
+  -webkit-box-shadow: inset 1px 1px 1px -1px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 1px 1px 1px -1px rgba(0,0,0,0.7);
+}
+
+#formButtonWrap{
+  text-align: right;
 }
 
 #formButton {
-  border: none;
+  border: 1px solid $gray;
+  background: #FFF;
   width: 46px;
+  height: 30px;
+  margin-bottom: 3px;
+
+  &:hover {
+    color: #FFF;
+    background: $gray-hover;
+    border: 1px solid $gray-hover;
+  }
+}
+
+#deleteAllButton {
+  border: 1px solid $gray;
+  background: #FFF;
+  width: 50px;
   height: 28px;
 }
 
@@ -46,20 +82,34 @@ $gray: #595757 !default;
   height: 130px;
   margin-bottom: 10px;
   padding: 7px;
-  border: 1px solid $gray;
+  background-color: #FFF;
 }
 
 .todoHeader {
   width: 400-8*2px;
 }
 
-.todoDate {
-  margin: 0px 0px auto auto;
+.finish {
+  float:left;
+  border: 1px solid $gray;
+  background: #FFF;
+  width: 46px;
+  height: 28px;
 
+  &:hover {
+    color: #FFF;
+    background: $gray-hover;
+    border: 1px solid $gray-hover;
+  }
+}
+
+.todoDate {
+  text-align: right;
+  font-size: 12px;
 }
 
 .todoText {
-  padding-top: 50-17px;
+  margin-top: 50px;
   height: 17px;
   font-size: 17px;
   text-align: right;
@@ -71,17 +121,62 @@ $gray: #595757 !default;
 }
 
 .edit {
+  border: 1px solid $gray;
+  background: #FFF;
   width: 46px;
   height: 28px;
+
+  &:hover {
+    color: #FFF;
+    background: $gray-hover;
+    border: 1px solid $gray-hover;
+  }
 }
 
 .delete {
+  border: 1px solid $gray;
+  background: #FFF;
   width: 46px;
   height: 28px;
+  margin-left: 3px;
+
+  &:hover {
+    color: #FFF;
+    background: $gray-hover;
+    border: 1px solid $gray-hover;
+  }
 }
+
+.change {
+  border: 1px solid $gray;
+  background: #FFF;
+  width: 46px;
+  height: 28px;
+
+  &:hover {
+    color: #FFF;
+    background: $gray-hover;
+    border: 1px solid $gray-hover;
+  }
+}
+
+.cancel {
+  border: 1px solid $gray;
+  background: #FFF;
+  width: 46px;
+  height: 28px;
+  margin-left: 3px;
+
+  &:hover {
+    color: #FFF;
+    background: $gray-hover;
+    border: 1px solid $gray-hover;
+  }
+}
+
 
 .inputTODO {
   width: 350px;
-  height: 28px;
+  height: 22px;
   font-size: 17px;
 }

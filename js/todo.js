@@ -83,6 +83,10 @@ $(document).on("click", ".change", function() {
   showTodo();
 });
 
+$(document).on("click", ".cancel", function() {
+  showTodo();
+});
+
 $(document).on("click", ".delete", function() {
   deleteTodo(this);
   showTodo();
@@ -108,9 +112,12 @@ function editTodo(elm) {
   var html = [];
   parentDiv.children(".todoText").remove();
   parentDiv.children(".todoFooter").remove();
-  html.push('<input class="inputTODO" type="text" value="' + todoText + '" maxlength="20">');
+  html.push('<div class="todoText">');
+    html.push('<input class="inputTODO" type="text" value="' + todoText + '" maxlength="20">');
+  html.push('</div>');
   html.push('<footer class="todoFooter">');
-    html.push('<input class="change" type="button" value="変更">');
+    html.push('<button class="change" type="button">変更</button>');
+    html.push('<button class="cancel" type="button">取消</button>');
   html.push('</footer');
   parentDiv.append(html.join(''));
 }
@@ -119,9 +126,9 @@ function changeTodo (elm) {
   var todoID = $(elm).closest(".todo").attr("id");
   var key = searchKeyfromTodoID(todoID);
   var todoData = JSON.parse(localStorage.getItem(key));
-  var text = $(elm).closest(".todo").children(".inputTODO");
+  var text = $(elm).closest(".todo").find(".inputTODO");
   var val = escapeText(text.val());
-  if( checkText(text.val(),true) ){
+  if( checkText(text.val()) ){
     //TODOのデータを上書きして保存する
     todoData[1] = val
     localStorage.setItem(key, JSON.stringify(todoData));
@@ -142,7 +149,7 @@ function saveText() {
   var time = new Date();
   var id = time.getTime();//UTC開始からのmsをtodoのIDにする
   var val = escapeText(text.val());
-  if( checkText(text.val(),false) ){
+  if( checkText(text.val()) ){
     //現在時刻をkeyとしてjsonVal[TODOのid,テキスト,年月曜日]を保存する
     var jsonVal = [ id, val, getDateString(time) ];
     localStorage.setItem(time, JSON.stringify(jsonVal));
@@ -157,15 +164,12 @@ function escapeText(text) {
 }
 
 // 入力チェックを行う
-function checkText(text,forCHANGE) {
+function checkText(text) {
   // 文字数が0または20以上は不可
   if (0 === text.length || 20 < text.length) {
     alert("文字数は1〜20字にしてください");
     return false;
   }
-
-  //変更の場合は同じでも可
-  if(forCHANGE) return true;
 
   // すでに入力された値があれば不可
   var length = localStorage.length;
@@ -202,8 +206,8 @@ function showTodo() {
     html.push('<div id='+todoID+' class="todo">');
 
       html.push('<header class="todoHeader">');
-        html.push('<input class="finish" type="button" value="遂行">');
-        html.push('<span class="todoDate">' + todoDate + '</span>');
+        html.push('<button class="finish" type="button">遂行</button>');
+        html.push('<div class="todoDate">追加日：' + todoDate + '</div>');
       html.push('</header>');
 
       html.push('<div class="todoText">' + todoText + '</div>');

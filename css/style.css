@@ -1,3 +1,7 @@
+html {
+  background: #F0F0E8;
+}
+
 #body_wrap {
   width: 400px;
   margin: 20px auto;
@@ -12,9 +16,13 @@
 }
 
 #resetButton {
-  font-size: 15pt;
+  font-size: 12pt;
   border: none;
-  background: #FFF;
+  background: #FFFF;
+  color: #ccc;
+}
+#resetButton:hover {
+  color: #000;
 }
 
 #form {
@@ -22,16 +30,41 @@
   margin-bottom: 20px;
 }
 
+#formTextWrap {
+  float: left;
+}
+
 #formText {
   width: 344px;
   height: 28px;
   font-size: 17px;
-  border: 1px solid #595757;
+  border: solid 1px #ddd;
+  -moz-box-shadow: inset 1px 1px 1px -1px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: inset 1px 1px 1px -1px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 1px 1px 1px -1px rgba(0, 0, 0, 0.7);
+}
+
+#formButtonWrap {
+  text-align: right;
 }
 
 #formButton {
-  border: none;
+  border: 1px solid #ccc;
+  background: #FFF;
   width: 46px;
+  height: 30px;
+  margin-bottom: 3px;
+}
+#formButton:hover {
+  color: #FFF;
+  background: #595757;
+  border: 1px solid #595757;
+}
+
+#deleteAllButton {
+  border: 1px solid #ccc;
+  background: #FFF;
+  width: 50px;
   height: 28px;
 }
 
@@ -40,19 +73,33 @@
   height: 130px;
   margin-bottom: 10px;
   padding: 7px;
-  border: 1px solid #595757;
+  background-color: #FFF;
 }
 
 .todoHeader {
   width: 384px;
 }
 
+.finish {
+  float: left;
+  border: 1px solid #ccc;
+  background: #FFF;
+  width: 46px;
+  height: 28px;
+}
+.finish:hover {
+  color: #FFF;
+  background: #595757;
+  border: 1px solid #595757;
+}
+
 .todoDate {
-  margin: 0px 0px auto auto;
+  text-align: right;
+  font-size: 12px;
 }
 
 .todoText {
-  padding-top: 33px;
+  margin-top: 50px;
   height: 17px;
   font-size: 17px;
   text-align: right;
@@ -64,17 +111,57 @@
 }
 
 .edit {
+  border: 1px solid #ccc;
+  background: #FFF;
   width: 46px;
   height: 28px;
 }
+.edit:hover {
+  color: #FFF;
+  background: #595757;
+  border: 1px solid #595757;
+}
 
 .delete {
+  border: 1px solid #ccc;
+  background: #FFF;
   width: 46px;
   height: 28px;
+  margin-left: 3px;
+}
+.delete:hover {
+  color: #FFF;
+  background: #595757;
+  border: 1px solid #595757;
+}
+
+.change {
+  border: 1px solid #ccc;
+  background: #FFF;
+  width: 46px;
+  height: 28px;
+}
+.change:hover {
+  color: #FFF;
+  background: #595757;
+  border: 1px solid #595757;
+}
+
+.cancel {
+  border: 1px solid #ccc;
+  background: #FFF;
+  width: 46px;
+  height: 28px;
+  margin-left: 3px;
+}
+.cancel:hover {
+  color: #FFF;
+  background: #595757;
+  border: 1px solid #595757;
 }
 
 .inputTODO {
   width: 350px;
-  height: 28px;
+  height: 22px;
   font-size: 17px;
 }
